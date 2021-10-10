@@ -33,10 +33,26 @@ shinyServer(function(input, output) {
         } else if (input$USIndex == "Dow"){
             us_ticker <- "^DJI"
         }
-        if (input$AsiaIndex == "Hang Seng Index"){
+        if (input$AsiaIndex == "Hong Kong"){
             asia_ticker <- "^HSI"
-        } else if (input$AsiaIndex == "Shanghai"){
+        } else if (input$AsiaIndex == "China"){
             asia_ticker <- "000001.SS"
+        } else if (input$AsiaIndex == "Taiwan"){
+            asia_ticker <- "^TWII"
+        } else if (input$AsiaIndex == "Shenzhen"){
+            asia_ticker <- "399001.SZ"
+        } else if (input$AsiaIndex == "Singapore"){
+            asia_ticker <- "^STI"
+        } else if (input$AsiaIndex == "Australia"){
+            asia_ticker <- "^AXJO"
+        }else if (input$AsiaIndex == "Malaysia"){
+            asia_ticker <- "^KLSE"
+        }else if (input$AsiaIndex == "Japan"){
+            asia_ticker <- "^N225"
+        }else if (input$AsiaIndex == "South Korea"){
+            asia_ticker <- "^KS11"
+        }else if (input$AsiaIndex == "New Zealand"){
+            asia_ticker <- "^NZ50"
         }
         tickers <- c(us_ticker, asia_ticker)
         getSymbols(tickers, 
@@ -75,15 +91,20 @@ shinyServer(function(input, output) {
             geom_line(aes(Date, Cor)) +
             geom_line(aes(Date, 0), size = 1.5) +
             geom_smooth(aes(Date, Cor)) +
-            geom_text(data = cor_df[1, ],
+            ylim(-100, 100) +
+            geom_text(data = data.frame(Date = as.Date(paste(input$year[1], "01", "15", sep = "-"),
+                                                       format = "%Y-%m-%d"),
+                                        Cor = 0),
                       aes(Date, Cor),
-                      vjust = -15,
-                      hjust = -0.5,
+                      vjust = -10,
+                      hjust = "left",
                       label = "Higher y-axis readings lean toward Asia leading") +
-            geom_text(data = cor_df[1, ],
+            geom_text(data = data.frame(Date = as.Date(paste(input$year[1], "01", "15", sep = "-"),
+                                                       format = "%Y-%m-%d"),
+                                        Cor = 0),
                       aes(Date, Cor),
                       vjust = 15,
-                      hjust = -0.5,
+                      hjust = "left",
                       label = "Lower y-axis readings lean toward US leading")
     })
     
@@ -95,10 +116,26 @@ shinyServer(function(input, output) {
         } else if (input$USIndex == "Dow"){
             us_ticker <- "^DJI"
         }
-        if (input$AsiaIndex == "Hang Seng Index"){
+        if (input$AsiaIndex == "Hong Kong"){
             asia_ticker <- "^HSI"
-        } else if (input$AsiaIndex == "Shanghai"){
+        } else if (input$AsiaIndex == "China"){
             asia_ticker <- "000001.SS"
+        } else if (input$AsiaIndex == "Taiwan"){
+            asia_ticker <- "^TWII"
+        } else if (input$AsiaIndex == "Shenzhen"){
+            asia_ticker <- "399001.SZ"
+        } else if (input$AsiaIndex == "Singapore"){
+            asia_ticker <- "^STI"
+        } else if (input$AsiaIndex == "Australia"){
+            asia_ticker <- "^AXJO"
+        }else if (input$AsiaIndex == "Malaysia"){
+            asia_ticker <- "^KLSE"
+        }else if (input$AsiaIndex == "Japan"){
+            asia_ticker <- "^N225"
+        }else if (input$AsiaIndex == "South Korea"){
+            asia_ticker <- "^KS11"
+        }else if (input$AsiaIndex == "New Zealand"){
+            asia_ticker <- "^NZ50"
         }
         tickers <- c(us_ticker, asia_ticker)
         getSymbols(tickers, 
@@ -120,10 +157,26 @@ shinyServer(function(input, output) {
         } else if (input$USIndex == "Dow"){
             us_ticker <- "^DJI"
         }
-        if (input$AsiaIndex == "Hang Seng Index"){
+        if (input$AsiaIndex == "Hong Kong"){
             asia_ticker <- "^HSI"
-        } else if (input$AsiaIndex == "Shanghai"){
+        } else if (input$AsiaIndex == "China"){
             asia_ticker <- "000001.SS"
+        } else if (input$AsiaIndex == "Taiwan"){
+            asia_ticker <- "^TWII"
+        } else if (input$AsiaIndex == "Shenzhen"){
+            asia_ticker <- "399001.SZ"
+        } else if (input$AsiaIndex == "Singapore"){
+            asia_ticker <- "^STI"
+        } else if (input$AsiaIndex == "Australia"){
+            asia_ticker <- "^AXJO"
+        }else if (input$AsiaIndex == "Malaysia"){
+            asia_ticker <- "^KLSE"
+        }else if (input$AsiaIndex == "Japan"){
+            asia_ticker <- "^N225"
+        }else if (input$AsiaIndex == "South Korea"){
+            asia_ticker <- "^KS11"
+        }else if (input$AsiaIndex == "New Zealand"){
+            asia_ticker <- "^NZ50"
         }
         tickers <- c(us_ticker, asia_ticker)
         getSymbols(tickers, 
