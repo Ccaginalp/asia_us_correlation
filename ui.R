@@ -37,9 +37,9 @@ dashboardPage(skin = 'blue',
                                         opposite case, i.e. the Asian session immediately following the U.S. 
                                         close. See the two cases below (Asia on the right, U.S. on the left)."),
                                       br(),
-                                      img(src = "SameDayComparison.png"),
+                                      img(src = "https://raw.githubusercontent.com/Ccaginalp/asia_us_correlation/main/www/DiffDayComparison.png"),
                                       br(),
-                                      img(src = "DiffDayComparison.png"),
+                                      img(src = "https://raw.githubusercontent.com/Ccaginalp/asia_us_correlation/main/www/SameDayComparison.png"),
                                       br(),
                                       br(),
                                       p("The relevant question is whether the U.S. markets lead the Asian markets 

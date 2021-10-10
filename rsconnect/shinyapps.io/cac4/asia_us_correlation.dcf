@@ -1,0 +1,14 @@
+name: asia_us_correlation
+title: asia_us_correlation
+username:
+account: cac4
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4839855
+bundleId: 5124628
+url: https://cac4.shinyapps.io/asia_us_correlation/
+when: 1633899276.23377
+lastSyncTime: 1633899276.23377
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: www/DiffDayComparison.png|www/SameDayComparison.png
