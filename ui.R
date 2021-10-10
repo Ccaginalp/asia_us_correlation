@@ -18,11 +18,19 @@ shinyUI(fluidPage(
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
+            sliderInput("year",
+                        "Years pictured:",
+                        min = 2010,
+                        max = 2022,
+                        value = c(2011, 2022)),
+            selectInput("USIndex",
+                        "US Index",
+                        c("S&P 500", "Nasdaq", "Dow"),
+                        selected = "S&P 500"),
+            selectInput("AsiaIndex",
+                        "Asian Index",
+                        c("Hang Seng Index", "Shanghai"),
+                        selected = "Hang Seng Index")
         ),
 
         # Show a plot of the generated distribution
